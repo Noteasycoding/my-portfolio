@@ -84,7 +84,7 @@ export default function Home() {
                 A Passionate Full Stack Developer 🚀 specializing in React Native, MERN Stack, and Scalable Applications.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <a href="/Zaheer_Khan_Resume.pdf" download>
+                <a href="https://drive.google.com/uc?export=download&id=1e-6iIgOBnnoa7JbF3RAuTPOP0d1DcS0O" target="_blank" rel="noopener noreferrer" download="Zaheer_Khan_Resume.pdf">
                   <Button>
                     <Download className="mr-2 h-4 w-4" /> Download Resume
                   </Button>
@@ -293,7 +293,8 @@ export default function Home() {
                     "Implemented user authentication, movie database, and responsive UI",
                     "Used JWT for secure authentication and Redux for state management"
                   ],
-                  image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&h=400&fit=crop"
+                  image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&h=400&fit=crop",
+                  link: "https://github.com/Noteasycoding/NetflixClone"
                 },
                 {
                   title: "StockTrack",
@@ -303,7 +304,8 @@ export default function Home() {
                     "Features product catalog, stock level alerts, and cloud-based database management",
                     "Used Firebase Firestore for real-time database sync"
                   ],
-                  image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=400&fit=crop"
+                  image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=400&fit=crop",
+                  link: "https://github.com/Noteasycoding/StockTrack"
                 }
               ].map((project, index) => (
                 <motion.div
@@ -322,12 +324,12 @@ export default function Home() {
                       />
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <div className="flex gap-2">
-                          <a href="https://github.com/zaheerkhan" target="_blank" rel="noopener noreferrer">
+                          <a href={project.link} target="_blank" rel="noopener noreferrer">
                             <Button variant="secondary" size="sm">
                               <Github className="mr-2 h-4 w-4" /> View Code
                             </Button>
                           </a>
-                          <a href="https://netflix-clone-demo.com" target="_blank" rel="noopener noreferrer">
+                          <a href={project.link} target="_blank" rel="noopener noreferrer">
                             <Button variant="secondary" size="sm">
                               <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                             </Button>
@@ -365,7 +367,7 @@ export default function Home() {
               <MessageSquare className="mr-2" /> Get in Touch
             </h2>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="mailto:zaheer.khan@example.com">
+              <a href="mailto:zaheer.khan9147@gmail.com">
                 <Button variant="outline" className="min-w-[200px]">
                   <Mail className="mr-2 h-4 w-4" /> Email Me
                 </Button>
@@ -380,7 +382,7 @@ export default function Home() {
                 </Button>
               </a>
               <a
-                href="https://github.com/zaheerkhan"
+                href="https://github.com/Noteasycoding"
                 target="_blank"
                 rel="noopener noreferrer"
               >
