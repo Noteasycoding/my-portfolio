@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Scene } from "@/components/3d/scene";
 import { SkillProgress } from "@/components/skill-progress";
 import {
   Github,
@@ -22,7 +21,6 @@ import {
   Layers,
   GitBranch,
 } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 import { useInView } from "react-intersection-observer";
 
 export default function Home() {
@@ -40,12 +38,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* 3D Background Scene */}
-      <Scene />
 
       {/* Navigation */}
       <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50 border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <motion.h1 
+          <motion.h1
             className="text-xl font-bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,7 +58,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 relative">
         <div className="container mx-auto">
-          <motion.div 
+          <motion.div
             className="flex flex-col md:flex-row items-center gap-8"
             initial="initial"
             animate="animate"
@@ -163,8 +160,8 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="p-6">
                 <p className="text-lg">
-                  I'm a Software Engineer at TrackNab with experience in full-stack web and mobile development. 
-                  I love solving complex problems, building scalable applications, and staying up to date with 
+                  I'm a Software Engineer at TrackNab with experience in full-stack web and mobile development.
+                  I love solving complex problems, building scalable applications, and staying up to date with
                   the latest technologies.
                 </p>
               </Card>
@@ -373,7 +370,7 @@ export default function Home() {
                   <Mail className="mr-2 h-4 w-4" /> Email Me
                 </Button>
               </a>
-              <a 
+              <a
                 href="https://www.linkedin.com/in/zahiruddin-khan-8b79a4203"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -382,7 +379,7 @@ export default function Home() {
                   <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                 </Button>
               </a>
-              <a 
+              <a
                 href="https://github.com/zaheerkhan"
                 target="_blank"
                 rel="noopener noreferrer"
