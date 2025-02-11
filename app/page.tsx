@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Home() {
   const fadeIn = {
@@ -115,6 +116,12 @@ export default function Home() {
                 >
                   <MessageSquare className="mr-2 h-4 w-4" /> Contact
                 </Button>
+                <Link href="/about">
+                  <Button variant="outline">
+                    <MessageSquare className="mr-2 h-4 w-4" /> About
+                  </Button>
+                </Link>
+
               </div>
             </div>
           </motion.div>
