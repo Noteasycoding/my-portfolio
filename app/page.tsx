@@ -22,6 +22,7 @@ import {
   GitBranch,
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const fadeIn = {
@@ -34,6 +35,7 @@ export default function Home() {
     threshold: 0.1,
     triggerOnce: true,
   });
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-background">
@@ -106,6 +108,12 @@ export default function Home() {
                   }}
                 >
                   <MessageSquare className="mr-2 h-4 w-4" /> Get in Touch
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => router.push('/contact')}
+                >
+                  <MessageSquare className="mr-2 h-4 w-4" /> Contact
                 </Button>
               </div>
             </div>
