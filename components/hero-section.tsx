@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download, Code, MessageSquare } from "lucide-react";
+import Image from 'next/image';
 
 interface HeroSectionProps {
     imageUrl: string;
@@ -29,10 +30,12 @@ export function HeroSection({ imageUrl, name, description, resumeUrl }: HeroSect
                 >
                     <div className="w-48 h-48 rounded-full overflow-hidden relative group">
                         <motion.div whileHover={{ scale: 1.05 }}>
-                            <img
+                            <Image
                                 src={imageUrl}
-                                alt={name}
-                                className="w-full h-full object-cover"
+                                alt={`${name} - Full Stack Developer specializing in React Native and MERN Stack`}
+                                fill
+                                priority
+                                className="object-cover"
                             />
                         </motion.div>
                     </div>
