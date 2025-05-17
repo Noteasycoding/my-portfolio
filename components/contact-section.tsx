@@ -26,10 +26,10 @@ export function ContactSection({ email, linkedin, github }: ContactSectionProps)
                         <MessageSquare className="mr-2" /> Get in Touch
                     </h2>
                     <div className="grid md:grid-cols-2 gap-8">
-                        <Card className="p-6">
+                        {/* <Card className="p-6">
                             <h3 className="text-xl font-semibold mb-4">Send me a message</h3>
                             <ContactForm />
-                        </Card>
+                        </Card> */}
                         <Card className="p-6">
                             <h3 className="text-xl font-semibold mb-4">Connect with me</h3>
                             <p className="text-muted-foreground mb-6">
