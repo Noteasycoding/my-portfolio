@@ -63,7 +63,7 @@ const experience = [
     title: "Software Engineer",
     company: "TrackNab",
     period: "Mar 2024 - Present",
-    location: "Doha, Qatar (Remote)",
+    location: "Dubai, United Arab Emirates (Remote)",
     description: [
       "Developing cross-platform mobile applications using React Native and Redux.js",
       "Improving application performance and state management",

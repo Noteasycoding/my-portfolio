@@ -29,9 +29,12 @@ export function HeroSection({ imageUrl, name, description, resumeUrl }: HeroSect
                     variants={fadeIn}
                 >
                     <div className="w-48 h-48 rounded-full overflow-hidden relative group">
-                        <motion.div whileHover={{ scale: 1.05 }}>
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="relative w-full h-full"
+                        >
                             <Image
-                                src={imageUrl}
+                                src="/assets/images/profile-image.jpeg"
                                 alt={`${name} - Full Stack Developer specializing in React Native and MERN Stack`}
                                 fill
                                 priority
