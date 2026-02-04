@@ -56,7 +56,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 {JSON.stringify(structuredData)}
             </Script>
 
-            <section className="py-16" >
+            <section className="py-16 bg-muted/50" >
                 <div className="container mx-auto px-4 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
