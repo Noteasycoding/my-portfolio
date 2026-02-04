@@ -23,7 +23,6 @@ import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
 import { StatsSection } from "@/components/stats-section";
 import { HeroSection } from "@/components/hero-section";
-import { TestimonialsSection } from "@/components/testimonials-section";
 import { LoadingAnimation } from "@/components/loading";
 
 import {
@@ -45,17 +44,17 @@ const about = {
 
 const projects: Project[] = [
   {
-    title: "Netflix Clone",
-    type: "Website",
-    tech: "MERN Stack",
+    title: "Superfast5G",
+    type: "Mobile App",
+    tech: "React Native + Firebase",
     description: [
-      "Developed a Netflix-inspired streaming platform using React.js, Node.js, Express.js, and MongoDB",
-      "Implemented user authentication, movie database, and responsive UI",
-      "Used JWT for secure authentication and Redux for state management"
+      "Live production mobile application published on Google Play Store",
+      "Allows users to view active plans, track data usage, and recharge online",
+      "Includes admin controls for user management and recharge tracking"
     ],
     image:
-      "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&h=400&fit=crop",
-    link: "https://github.com/Noteasycoding/NetflixClone"
+      "https://play-lh.googleusercontent.com/f8NgMxdybOu-PMu06zNU26JYOJfwbBlgKqHax61peNVZDC1lhOYGydbv6jSf79tlZA=w5120-h2880-rw",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.superfast5g"
   },
   {
     title: "StockTrack",
@@ -68,23 +67,25 @@ const projects: Project[] = [
     ],
     image:
       "https://cdn.dribbble.com/userupload/17119217/file/original-5255cb6170c8dd1c60718e1ea8f07495.png?resize=3200x2400&vertical=center",
-    link: "https://github.com/Noteasycoding/StockTrack"
+    github: "https://github.com/Noteasycoding/StockTrack"
   },
   {
-    title: "Superfast5G",
-    type: "Mobile App",
-    tech: "React Native + Firebase",
+    title: "Netflix Clone",
+    type: "Website",
+    tech: "MERN Stack",
     description: [
-      "Live production mobile application published on Google Play Store",
-      "Allows users to view active plans, track data usage, and recharge online",
-      "Includes admin controls for user management and recharge tracking"
+      "Developed a Netflix-inspired streaming platform using React.js, Node.js, Express.js, and MongoDB",
+      "Implemented user authentication, movie database, and responsive UI",
+      "Used JWT for secure authentication and Redux for state management"
     ],
     image:
-      "https://play-lh.googleusercontent.com/f8NgMxdybOu-PMu06zNU26JYOJfwbBlgKqHax61peNVZDC1lhOYGydbv6jSf79tlZA=w5120-h2880-rw",
-    link:
-      "https://play.google.com/store/apps/details?id=com.superfast5g"
-  }
+      "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&h=400&fit=crop",
+    github: "https://github.com/Noteasycoding/NetflixClone",
+
+  },
+
 ];
+
 
 const experience = [
   {
@@ -221,7 +222,7 @@ export default function Home() {
             <HeroSection
               imageUrl="https://media.licdn.com/dms/image/v2/D5603AQFpsGvZSYGrUA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711989143607"
               name="Zahiruddin (Zaheer Khan)"
-              description="A Passionate Full Stack Developer 🚀 specializing in React Native, MERN Stack, and scalable applications."
+              description="A Passionate Full Stack Developer specializing in React Native, MERN Stack, and scalable applications."
               resumeUrl="https://drive.google.com/uc?export=download&id=1e-6iIgOBnnoa7JbF3RAuTPOP0d1DcS0O"
             />
           </section>
@@ -236,11 +237,8 @@ export default function Home() {
             <ExperienceSection experience={experience} />
           </section>
 
-          {/* IMPORTANT: NO extra wrapper here */}
-          <ProjectsSection projects={projects} />
-
-          <section id="testimonials">
-            <TestimonialsSection />
+          <section id="projects">
+            <ProjectsSection projects={projects} />
           </section>
 
           <section id="contact">
