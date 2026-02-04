@@ -44,7 +44,7 @@ export function HeroSection({ imageUrl, name, description, resumeUrl }: HeroSect
                     </div>
                     <div className="flex-1 text-center md:text-left">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                            Hi, I'm {name} 👋
+                            Hi, I'm {name}
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6">
                             {description}
