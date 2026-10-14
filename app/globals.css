@@ -2,73 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/*
+ * Tokens. Colour values are HSL triplets so Tailwind can apply alpha.
+ * Ground: warm graphite. Ink: warm off-white. One accent, "signal": school-bus
+ * yellow, from the product I build every day. "sage" is the single secondary
+ * syntax colour (strings, live states).
+ */
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+  :root,
+  .light {
+    --background: 60 6% 96.5%;
+    --surface: 60 5% 93%;
+    --raised: 0 0% 100%;
+    --foreground: 60 8% 8%;
+    --muted-foreground: 45 6% 34%;
+    --dim: 45 5% 52%;
+    --border: 60 5% 85%;
+    --border-strong: 60 4% 72%;
+    --signal: 43 100% 50%;
+    --signal-ink: 36 95% 30%;
+    --signal-foreground: 60 8% 8%;
+    --sage: 165 30% 30%;
+
+    /* shadcn names, kept so components/ui keeps working */
+    --card: var(--surface);
+    --card-foreground: var(--foreground);
+    --popover: var(--raised);
+    --popover-foreground: var(--foreground);
+    --primary: var(--foreground);
+    --primary-foreground: var(--background);
+    --secondary: var(--surface);
+    --secondary-foreground: var(--foreground);
+    --muted: var(--surface);
+    --accent: var(--surface);
+    --accent-foreground: var(--foreground);
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --input: var(--border);
+    --ring: var(--signal-ink);
+    --radius: 2px;
   }
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 60 4% 6.5%;
+    --surface: 60 3% 9.5%;
+    --raised: 60 3% 12%;
+    --foreground: 45 18% 90%;
+    --muted-foreground: 45 7% 64%;
+    --dim: 45 4% 44%;
+    --border: 60 3% 17%;
+    --border-strong: 60 3% 26%;
+    --signal: 43 100% 52%;
+    --signal-ink: 43 100% 58%;
+    --signal-foreground: 60 4% 6.5%;
+    --sage: 160 22% 64%;
+    --destructive: 0 62% 55%;
+    --ring: var(--signal);
+  }
+
+  :root {
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --dur-1: 120ms;
+    --dur-2: 200ms;
+    --dur-3: 280ms;
+    --status-h: 28px;
   }
 }
 
@@ -76,7 +74,120 @@
   * {
     @apply border-border;
   }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+    font-feature-settings: 'ss02', 'zero';
+  }
+
+  ::selection {
+    background: hsl(var(--signal));
+    color: hsl(var(--signal-foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  code,
+  kbd,
+  .font-mono {
+    font-feature-settings: 'zero', 'calt' 0;
+  }
+}
+
+@layer components {
+  /* Anything pressable gets physical feedback. */
+  .press {
+    transition: transform var(--dur-1) var(--ease-out);
+  }
+  .press:active {
+    transform: scale(0.97);
+  }
+
+  .kbd {
+    @apply inline-flex h-5 min-w-5 items-center justify-center border border-border px-1 font-mono text-[11px] leading-none text-muted-foreground;
+    border-bottom-width: 2px;
+  }
+
+  .link-ink {
+    @apply underline decoration-border-strong underline-offset-4;
+    transition: text-decoration-color var(--dur-2) ease, color var(--dur-2) ease;
+  }
+  .link-ink:hover {
+    @apply decoration-signal-ink;
+  }
+
+  /* Blocks enter in sequence: set --i on each child. */
+  .rise {
+    animation: rise var(--dur-3) var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 60ms);
+  }
+
+  .caret {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.1em;
+    translate: 0 0.18em;
+    background: hsl(var(--signal));
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  /* First-visit intro gate; see Welcome in components/workspace/terminal.tsx. */
+  html[data-intro='play'] .intro-gated {
+    opacity: 0;
+    animation: none;
+  }
+  html[data-intro='play'] .intro-cmd:not(.typing) {
+    visibility: hidden;
+  }
+
+  .scrollbar-quiet {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border-strong)) transparent;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin-steps {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .caret {
+    animation: none;
   }
 }
