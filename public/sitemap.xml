@@ -2,8 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://my-portfolio-gray-beta-77.vercel.app/</loc>
-    <lastmod>2025-04-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-15</lastmod>
     <priority>1.0</priority>
   </url>
-</urlset> 
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/projects</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/projects/tracknab</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/projects/superfast5g</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/projects/stocktrack</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/projects/netflix-clone</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/experience</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/skills</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/about</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-portfolio-gray-beta-77.vercel.app/contact</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>
